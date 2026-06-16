@@ -1,27 +1,17 @@
-# Final Project Template
+# Pokédex Explorer
 
-Starter scaffold for the Web Engineering 2026 final project. Open `index.html` in your browser and start building.
+This is my final project for Web Engineering 2026. 
 
-**Replace first:**
-- `BASE_URL` in `js/api.js` — your chosen API's base URL
-- `<title>` on all three HTML pages — your project name
-- Colour variables in `css/style.css`
-- Page names if needed — `login.html` / `saved.html` can be renamed to match your project
+## About the Project
+Pokédex Explorer is a 3-page web application that lets you search and save your favorite Pokémon using the free [PokéAPI](https://pokeapi.co/).
 
-**File structure:**
-```
-your-project/
-├── index.html        ← main page
-├── login.html        ← login / profile page (rename if needed)
-├── saved.html        ← saved items page (rename if needed)
-├── css/
-│   └── style.css
-├── js/
-│   ├── main.js       ← entry point for index.html
-│   ├── login.js      ← entry point for login.html
-│   ├── saved.js      ← entry point for saved.html
-│   └── api.js        ← fetch logic + localStorage helpers
-└── assets/
-```
+### Pages
+- **login.html**: A simulated login page where you enter your trainer name.
+- **index.html**: The main search page where you can search for Pokémon by name or filter by type.
+- **saved.html**: A page to view all the Pokémon you have saved to your favorites.
 
-See [project requirements](https://github.com/cu-cst-web1-2026-eng/materials/blob/main/lecture_13/final_project/README.md) for the full technical checklist and grading breakdown.
+### Technical Details
+- Built with HTML, CSS, and Vanilla JavaScript.
+- Uses `fetch` to get data from the PokéAPI.
+- Saves user session and favorite Pokémon using `localStorage`.
+- Uses CSS Grid and Flexbox for a responsive layout.
