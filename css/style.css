@@ -871,20 +871,16 @@ main {
   margin-bottom: 15px;
   text-align: center;
 }
-}
-
 
 /* ===== footer ===== */
 footer {
+  width: 100%;
   border-top: 1px solid var(--border);
   padding: var(--space-lg) var(--space-xl);
   text-align: center;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  margin-top: var(--space-3xl);
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  margin-top: auto; /* Push it to bottom */
 }
 
 footer a { color: var(--primary); font-weight: 600; }
