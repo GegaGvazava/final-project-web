@@ -793,14 +793,7 @@ main {
   line-height: 1.5;
 }
 
-#login-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  text-align: left;
-}
-
-#login-form label[for="name-input"] {
+#login-form label, #register-form label {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -810,7 +803,7 @@ main {
   display: block;
 }
 
-#name-input {
+#login-form input, #register-form input {
   width: 100%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
@@ -820,45 +813,66 @@ main {
   font-family: var(--font);
   font-size: 1rem;
   outline: none;
+  margin-bottom: 15px;
+}
+
+/* Auth Tabs */
+.auth-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border);
+}
+
+.auth-tabs button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
   transition: var(--transition);
 }
 
-#name-input:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary-dim);
+.auth-tabs button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
 }
 
-#login-form button[type="submit"] {
+.auth-tabs button:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+.auth-btn {
   background: linear-gradient(135deg, var(--primary) 0%, #f5a820 100%);
-  color: #1a1000;
+  color: #1a1200;
   border: none;
-  border-radius: var(--radius-pill);
-  padding: 14px;
+  border-radius: var(--radius-sm);
+  padding: 12px;
   font-size: 1rem;
   font-weight: 800;
-  font-family: var(--font);
-  letter-spacing: 0.01em;
-  transition: var(--transition);
-  margin-top: 4px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-#login-form button[type="submit"]:hover {
+.auth-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px var(--primary-glow);
+  box-shadow: 0 8px 28px var(--primary-glow);
 }
 
-#login-form button[type="submit"]:active { transform: translateY(0); }
-
-#login-error {
+.error-msg {
   color: #ff8095;
   font-size: 0.85rem;
+  margin-bottom: 15px;
   text-align: center;
-  padding: var(--space-sm) var(--space-md);
-  background: rgba(255, 92, 122, 0.08);
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 92, 122, 0.2);
-  font-weight: 600;
 }
+}
+
 
 /* ===== footer ===== */
 footer {
