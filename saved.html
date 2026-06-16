@@ -24,7 +24,10 @@
 
   <main>
     <section>
-      <h2>Saved Pokémon</h2>
+      <div class="section-header" style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2>Saved Pokémon</h2>
+        <button id="clear-all-btn" class="save-btn" style="width: auto; margin: 0;" hidden>Clear All</button>
+      </div>
       <p id="saved-empty" hidden>Nothing saved yet.</p>
       <p id="saved-count" hidden></p>
       <div id="saved-grid"></div>

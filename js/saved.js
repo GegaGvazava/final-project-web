@@ -27,17 +27,20 @@ function renderSaved() {
   const grid = document.getElementById('saved-grid');
   const empty = document.getElementById('saved-empty');
   const count = document.getElementById('saved-count');
+  const clearBtn = document.getElementById('clear-all-btn');
 
   grid.innerHTML = '';
 
   if (items.length === 0) {
     empty.hidden = false;
     count.hidden = true;
+    clearBtn.hidden = true;
     return;
   }
 
   empty.hidden = true;
   count.hidden = false;
+  clearBtn.hidden = false;
   count.textContent = `You have ${items.length} saved`;
 
   items.forEach(item => {
@@ -70,5 +73,12 @@ function renderSaved() {
     grid.appendChild(card);
   });
 }
+
+document.getElementById('clear-all-btn').addEventListener('click', () => {
+  if (confirm('Are you sure you want to remove all saved Pokémon?')) {
+    setSaved([]);
+    renderSaved();
+  }
+});
 
 renderSaved();
