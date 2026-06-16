@@ -3,46 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Log in to PokéExplorer — enter your trainer name to start exploring Pokémon.">
-  <title>Login — PokéExplorer</title>
+  <title>Login — Pokédex Explorer</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="login-page">
 
   <main>
-
     <div class="login-card">
-
-      <!-- Pokéball graphic built with pure CSS -->
-      <div class="login-pokeball" role="img" aria-label="Pokéball"></div>
-
-      <h1>Welcome to<br><span class="grad">PokéExplorer</span></h1>
-      <p>Enter your trainer name to begin your Pokémon journey.</p>
+      <h1>Pokédex Explorer</h1>
+      <p>Enter your trainer name to start</p>
 
       <form id="login-form">
-        <!-- input type="text" with validation attributes -->
-        <div>
-          <label for="name-input">Trainer Name</label>
-          <input
-            id="name-input"
-            type="text"
-            name="name"
-            placeholder="e.g. Ash Ketchum"
-            required
-            minlength="2"
-            maxlength="30"
-            autocomplete="name"
-            spellcheck="false"
-          >
-        </div>
+        <label for="name-input">Your name</label>
+        <input id="name-input" type="text" name="name" required minlength="2">
 
         <p id="login-error" hidden></p>
 
-        <button type="submit" id="login-submit-btn">Start Adventure →</button>
+        <button type="submit">Login</button>
       </form>
-
     </div>
-
   </main>
 
   <script type="module" src="js/login.js"></script>

@@ -1,15 +1,15 @@
-const BASE_URL = 'https://pokeapi.co/api/v2'; // PokéAPI base URL
+const BASE_URL = 'https://pokeapi.co/api/v2'; // replace with your API base URL
 
-/**
- * Fetches data from the PokéAPI.
- * Accepts either a path (e.g. '/pokemon/pikachu') or a full URL.
- * Checks response.ok and throws a descriptive error on failure.
- */
 export async function fetchData(endpoint) {
-  const url = endpoint.startsWith('http') ? endpoint : `${BASE_URL}${endpoint}`;
+  // fetch, check response.ok, return response.json()
+  let url = endpoint;
+  if (!endpoint.startsWith('http')) {
+    url = BASE_URL + endpoint;
+  }
+  
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`HTTP ${response.status} — ${response.statusText}`);
+    throw new Error('Could not fetch data');
   }
   return response.json();
 }
