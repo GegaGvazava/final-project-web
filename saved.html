@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saved — Project Name</title>
+  <meta name="description" content="Your saved Pokémon on PokéExplorer — view and manage your favourites.">
+  <title>Saved Pokémon — PokéExplorer</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header>
     <nav>
-      <span class="nav__logo">Project Name</span>
+      <span class="nav__logo">⚡ PokéExplorer</span>
       <div class="nav__links">
         <a href="index.html">Search</a>
-        <a href="saved.html">Saved</a>
+        <a href="saved.html" class="active" aria-current="page">Saved</a>
       </div>
       <div class="nav__actions">
         <span id="nav-user"></span>
@@ -25,15 +26,26 @@
   <main>
 
     <section>
-      <h2>Saved Items</h2>
-      <p id="saved-empty" hidden>Nothing saved yet.</p>
+      <div class="section-header">
+        <h1>Your <span class="grad">Saved</span> Pokémon</h1>
+        <p>Pokémon you've bookmarked from your searches.</p>
+      </div>
+
+      <span id="saved-count" hidden></span>
+
+      <p id="saved-empty" hidden>
+        <span class="empty-icon">🎒</span>
+        <span>Your Pokédex is empty!</span><br>
+        <a href="index.html">Go search for some Pokémon</a> and hit the ♡ to save them here.
+      </p>
+
       <div id="saved-grid"></div>
     </section>
 
   </main>
 
   <footer>
-    <!-- footer content -->
+    <p>Built with ❤️ using <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a> · Web Engineering 2026 Final Project</p>
   </footer>
 
   <script type="module" src="js/saved.js"></script>

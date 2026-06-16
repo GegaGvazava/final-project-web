@@ -3,22 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login — Project Name</title>
+  <meta name="description" content="Log in to PokéExplorer — enter your trainer name to start exploring Pokémon.">
+  <title>Login — PokéExplorer</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="login-page">
 
   <main>
 
-    <form id="login-form">
-      <!-- input type="text" with validation attributes -->
-      <label for="name-input">Your name</label>
-      <input id="name-input" type="text" name="name" required minlength="2" autocomplete="name">
+    <div class="login-card">
 
-      <p id="login-error" hidden></p>
+      <!-- Pokéball graphic built with pure CSS -->
+      <div class="login-pokeball" role="img" aria-label="Pokéball"></div>
 
-      <button type="submit">Start →</button>
-    </form>
+      <h1>Welcome to<br><span class="grad">PokéExplorer</span></h1>
+      <p>Enter your trainer name to begin your Pokémon journey.</p>
+
+      <form id="login-form">
+        <!-- input type="text" with validation attributes -->
+        <div>
+          <label for="name-input">Trainer Name</label>
+          <input
+            id="name-input"
+            type="text"
+            name="name"
+            placeholder="e.g. Ash Ketchum"
+            required
+            minlength="2"
+            maxlength="30"
+            autocomplete="name"
+            spellcheck="false"
+          >
+        </div>
+
+        <p id="login-error" hidden></p>
+
+        <button type="submit" id="login-submit-btn">Start Adventure →</button>
+      </form>
+
+    </div>
 
   </main>
 

@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Name</title>
+  <meta name="description" content="PokéExplorer — Search and discover Pokémon. Filter by name, type, and more. Save your favourites for later.">
+  <title>PokéExplorer — Discover Pokémon</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header>
     <nav>
-      <span class="nav__logo">Project Name</span>
+      <span class="nav__logo">⚡ PokéExplorer</span>
       <div class="nav__links">
-        <a href="index.html">Search</a>
+        <a href="index.html" class="active" aria-current="page">Search</a>
         <a href="saved.html">Saved</a>
       </div>
       <div class="nav__actions">
@@ -24,17 +25,92 @@
 
   <main>
 
-    <!-- search / filter form -->
+    <!-- hero -->
+    <section class="hero">
+      <span class="hero__eyebrow">⚡ Powered by PokéAPI</span>
+      <h1 class="hero__title">Discover Every<br><span class="grad">Pokémon</span></h1>
+      <p class="hero__sub">Search by name, filter by type, and save your favourites — all in one place.</p>
+    </section>
+
+    <!-- search / filter form — at least 3 different input types -->
     <section>
-      <form id="search-form">
-        <!-- add your inputs here (at least 3 different types) -->
-        <button type="submit">Search</button>
-      </form>
+      <div class="search-card">
+        <form id="search-form">
+
+          <!-- input type: text -->
+          <div class="form__group">
+            <label for="name-input">Pokémon Name</label>
+            <input
+              id="name-input"
+              type="text"
+              name="name"
+              placeholder="e.g. pikachu, eevee…"
+              autocomplete="off"
+              spellcheck="false"
+            >
+          </div>
+
+          <!-- input type: select -->
+          <div class="form__group">
+            <label for="type-select">Filter by Type</label>
+            <select id="type-select" name="type">
+              <option value="">All Types</option>
+              <option value="fire">🔥 Fire</option>
+              <option value="water">💧 Water</option>
+              <option value="grass">🌿 Grass</option>
+              <option value="electric">⚡ Electric</option>
+              <option value="psychic">🔮 Psychic</option>
+              <option value="ice">❄️ Ice</option>
+              <option value="dragon">🐉 Dragon</option>
+              <option value="dark">🌑 Dark</option>
+              <option value="fairy">✨ Fairy</option>
+              <option value="fighting">🥊 Fighting</option>
+              <option value="rock">🪨 Rock</option>
+              <option value="ghost">👻 Ghost</option>
+              <option value="bug">🐛 Bug</option>
+              <option value="poison">☠️ Poison</option>
+              <option value="ground">🏜️ Ground</option>
+              <option value="flying">🦅 Flying</option>
+              <option value="steel">⚙️ Steel</option>
+              <option value="normal">⭐ Normal</option>
+            </select>
+          </div>
+
+          <!-- input type: range -->
+          <div class="form__group">
+            <label for="limit-input">
+              <span class="range-header">
+                <span>Results</span>
+                <span class="range-val" id="limit-value">12</span>
+              </span>
+            </label>
+            <input
+              id="limit-input"
+              type="range"
+              name="limit"
+              min="4"
+              max="20"
+              value="12"
+              step="4"
+            >
+          </div>
+
+          <button type="submit" class="search-btn" id="search-submit-btn">🔍 Search</button>
+        </form>
+      </div>
     </section>
 
     <!-- loading and error states -->
-    <p id="loading-msg" hidden>Loading…</p>
+    <p id="loading-msg" hidden>
+      <span class="spinner"></span>
+      Loading Pokémon…
+    </p>
     <p id="error-msg" hidden></p>
+
+    <!-- results meta -->
+    <div class="results-meta">
+      <span id="results-count"></span>
+    </div>
 
     <!-- dynamically generated cards land here -->
     <section>
@@ -44,7 +120,7 @@
   </main>
 
   <footer>
-    <!-- footer content -->
+    <p>Built with ❤️ using <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a> · Web Engineering 2026 Final Project</p>
   </footer>
 
   <script type="module" src="js/main.js"></script>
