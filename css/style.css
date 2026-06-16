@@ -353,6 +353,10 @@ main {
 }
 
 /* ===== loading & error states ===== */
+[hidden] {
+  display: none !important;
+}
+
 #loading-msg {
   display: flex;
   align-items: center;
@@ -411,6 +415,24 @@ main {
 }
 
 /* ===== card ===== */
+.save-btn {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-top: 12px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);

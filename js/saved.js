@@ -58,6 +58,7 @@ function renderSaved() {
 
     const removeBtn = document.createElement('button');
     removeBtn.type = 'button';
+    removeBtn.className = 'save-btn';
     removeBtn.textContent = 'Remove';
     removeBtn.addEventListener('click', () => {
       const updated = getSaved().filter(saved => saved.id !== item.id);
