@@ -16,10 +16,14 @@ export async function fetchData(endpoint) {
 
 // localStorage helpers — import these wherever you need saved state
 export function getSaved() {
-  const raw = localStorage.getItem('savedItems');
+  const user = localStorage.getItem('user');
+  if (!user) return [];
+  const raw = localStorage.getItem(`savedItems_${user}`);
   return raw ? JSON.parse(raw) : [];
 }
 
 export function setSaved(items) {
-  localStorage.setItem('savedItems', JSON.stringify(items));
+  const user = localStorage.getItem('user');
+  if (!user) return;
+  localStorage.setItem(`savedItems_${user}`, JSON.stringify(items));
 }
